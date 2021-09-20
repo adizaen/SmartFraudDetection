@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Deteksi Penipuan Kartu Kredit</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <header class="bg-dark">
+        <p class="heading">SMART FRAUD DETECTION</p>
+    </header>
+
+    <div class="container">
+        <div class="alert alert-info alert-informasi" role="alert">
+            <h4 class="alert-heading">Tentang Aplikasi</h4>
+            <hr>
+            <li class="ml-3"><strong>SMART FRAUD DETECTION</strong> berfungsi untuk mendeteksi kecurangan pada transaksi kartu kredit</li>
+            <li class="ml-3">Aplikasi ini menggunakan model <strong>ANN (Artificial Neural Network)</strong> yang telah dilatih sebelumnya</li>
+            <li class="ml-3">Model yang digunakan memiliki akurasi yang tinggi sebesar <strong>97%</strong></li>
+            <li class="ml-3">Isi form dibawah ini untuk melakukan pengecekan dan gunakan tombol <strong>TAB</strong> untuk berpindah kolom isian</li>
+            <li class="ml-3">Hasil akan menunjukan transaksi <strong>NORMAL</strong> atau transaksi
+                <strong>FRAUD</strong> berdasarkan model yang telah dilatih</li>
+        </div>
+
+        <div class="alert alert-success alert-data" role="alert">
+            <h4 class="alert-heading">Form Data Transaksi</h4>
+            <hr>
+            <form action="/getResult" method="post" role="form" id="form-data">
+                <div class="row my-3">
+                    <label for="X" class="col-sm-2 col-form-label">ID Kartu (X)</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="X" name="X" autofocus>
+                    </div>
+                    <label for="id_tanggal_transaksi_awal" class="col-sm-2 col-form-label">ID tanggal. Transaksi
+                        Awal</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="id_tanggal_transaksi_awal" name="id_tanggal_transaksi_awal">
+                    </div>
+                    <label for="tanggal_transaksi_awal" class="col-sm-2 col-form-label">tanggal. Transaksi Awal</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="tanggal_transaksi_awal" name="tanggal_transaksi_awal">
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <label for="tipe_kartu" class="col-sm-2 col-form-label">Tipe Kartu</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="tipe_kartu" name="tipe_kartu">
+                    </div>
+                    <label for="id_merchant" class="col-sm-2 col-form-label">ID Merchant</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="id_merchant" name="id_merchant">
+                    </div>
+                    <label for="nama_merchant" class="col-sm-2 col-form-label">Nama Merchant</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="nama_merchant" name="nama_merchant">
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <label for="tipe_mesin" class="col-sm-2 col-form-label">Tipe Mesin</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="tipe_mesin" name="tipe_mesin">
+                    </div>
+                    <label for="tipe_transaksi" class="col-sm-2 col-form-label">Tipe Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="tipe_transaksi" name="tipe_transaksi">
+                    </div>
+                    <label for="nama_transaksi" class="col-sm-2 col-form-label">Nama Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="nama_transaksi" name="nama_transaksi">
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <label for="nilai_transaksi" class="col-sm-2 col-form-label">Nilai Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="nilai_transaksi" name="nilai_transaksi">
+                    </div>
+                    <label for="id_negara" class="col-sm-2 col-form-label">ID Negara</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="id_negara" name="id_negara">
+                    </div>
+                    <label for="nama_negara" class="col-sm-2 col-form-label">Nama Negara</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="nama_negara" name="nama_negara">
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <label for="nama_kota" class="col-sm-2 col-form-label">Nama Kota</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="nama_kota" name="nama_kota">
+                    </div>
+                    <label for="lokasi_mesin" class="col-sm-2 col-form-label">Lokasi Mesin</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="lokasi_mesin" name="lokasi_mesin">
+                    </div>
+                    <label for="pemilik_mesin" class="col-sm-2 col-form-label">Pemilik Mesin</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="pemilik_mesin" name="pemilik_mesin">
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <label for="waktu_transaksi" class="col-sm-2 col-form-label">Waktu Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="waktu_transaksi" name="waktu_transaksi">
+                    </div>
+                    <label for="kuartal_transaksi" class="col-sm-2 col-form-label">Kuartal Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="kuartal_transaksi" name="kuartal_transaksi">
+                    </div>
+                    <label for="kepemilikan_kartu" class="col-sm-2 col-form-label">Kepemilikan Kartu</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="kepemilikan_kartu" name="kepemilikan_kartu">
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <label for="nama_channel" class="col-sm-2 col-form-label">Nama Channel</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="nama_channel" name="nama_channel">
+                    </div>
+                    <label for="id_channel" class="col-sm-2 col-form-label">ID Channel</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="id_channel" name="id_channel">
+                    </div>
+                    <label for="rata_rata_nilai_transaksi" class="col-sm-2 col-form-label">rata_rata Nilai
+                        Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="rata_rata_nilai_transaksi" name="rata_rata_nilai_transaksi">
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <label for="maksimum_nilai_transaksi" class="col-sm-2 col-form-label">maksimum. Nilai
+                        Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="maksimum_nilai_transaksi" name="maksimum_nilai_transaksi">
+                    </div>
+                    <label for="minimum_nilai_transaksi" class="col-sm-2 col-form-label">minimum. Nilai
+                        Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="minimum_nilai_transaksi" name="minimum_nilai_transaksi">
+                    </div>
+                    <label for="rata_rata_jumlah_transaksi" class="col-sm-2 col-form-label">rata_rata Jumlah
+                        Transaksi</label>
+                    <div class="col-sm-2 input-group-sm">
+                        <input type="number" class="form-control" id="rata_rata_jumlah_transaksi" name="rata_rata_jumlah_transaksi">
+                    </div>
+                </div>
+                <div class="row mt-4 px-2">
+                    <button type="submit" class="btn btn-success btn-submit py-3">Cek Transaksi</button>
+                </div>
+            </form>
+        </div>
+        <div class="alert alert-success alert-hasil text-center" role="alert">
+            <p class="">Hasil Pengecekan</p>
+            <hr>
+            <h3 class="py-2 fw-bolder text-hasil">-</h3>
+            <button type="button" class="btn btn-success btn-refill py-2 px-4 mt-2">Cek Ulang</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='js/myScript.js') }}"></script>
+</body>
+
+</html>

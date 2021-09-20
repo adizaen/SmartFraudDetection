@@ -1,0 +1,12 @@
+Num. of iterate = 350
+
+--------------------------
+	RESULT
+--------------------------
+Accuracy	: 97.05 %
+Precision	: 99.41 %
+Recall		: 94.79 %
+Specificity	: 99.41 %
+F1 Score	: 97.04 %
+Error Rate	:  2.95 %
+AUC		: 98.92 %
