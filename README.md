@@ -36,7 +36,7 @@ Performa model (`performance.txt`) diuji sebanyak 350 kali iterasi:
 ### Scaler :
 File `scaler.bin` merupakan file StandardScaler() yang digunakan untuk normalisasi pada saat training. File ini diperlukan untuk menormalisasi data testing karena data testing yang tidak dinormalkan sesuai pada saat training, menyebabkan data tidak bisa terprediksi dengan benar.
 
-### Scaler :
+### Flask :
 Folder `SmartFraudFlask` berisi file website `Smart Fraud Detection` yang digunakan untuk deteksi fraud berbasis website. Aplikasi ini dibangun menggunakan framework Flask.
 
 ### Best Regards :
