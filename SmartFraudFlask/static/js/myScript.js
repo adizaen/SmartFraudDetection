@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    checkScreen();
+
     var pattern = /^[-+]?[0-9]+\.?[0-9]*$/; // mengatur agar input form hanya bisa diisi angka dan spesial karakter
     var step = 0.00001; // mengatur bilangan desimal yang bisa diinput pada input form
 
@@ -60,6 +62,8 @@ $(document).ready(function() {
     $('.btn-refill').on('click', function() {
         reset(); // memanggil fungsi reset() ketika tombol cek ulang diklik
     });
+
+    $(window).on('resize', checkScreen);
 });
 
 // fungsi untuk membersihkan form dan mengembalikan ke tampilan awal
@@ -70,4 +74,13 @@ function reset() {
     $('.alert-hasil').addClass('alert-success');
     $('input').val(null);
     $('#X').focus();
+}
+
+// fungsi untuk cek lebar layar untuk mengatur jarak antar baris di form isian
+function checkScreen() {
+    if ($(window).width() <= 767) {
+        $("div.row").removeClass('my-3');
+    } else {
+        $("div.row").addClass('my-3');
+    }
 }

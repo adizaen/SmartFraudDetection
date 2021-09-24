@@ -33,7 +33,10 @@ button.btn-refill {
     margin-top: 8%;
 }
 
-@media (max-width: 991px) {
+
+/* tablet screen */
+
+@media (max-width: 992px) {
     .heading {
         font-size: 18px;
         top: 30%;

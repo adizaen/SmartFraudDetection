@@ -9,9 +9,8 @@
 
     <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -36,130 +35,130 @@
             <hr>
             <form action="/getResult" method="post" role="form" id="form-data">
                 <div class="row my-3">
-                    <label for="X" class="col-sm-2 col-form-label">ID Kartu (X)</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="X" class="col col-form-label">ID Kartu (X)</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="X" name="X" autofocus>
                     </div>
-                    <label for="id_tanggal_transaksi_awal" class="col-sm-2 col-form-label">ID tanggal. Transaksi
+                    <label for="id_tanggal_transaksi_awal" class="col col-form-label">ID Tgl. Transaksi
                         Awal</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="id_tanggal_transaksi_awal" name="id_tanggal_transaksi_awal">
                     </div>
-                    <label for="tanggal_transaksi_awal" class="col-sm-2 col-form-label">tanggal. Transaksi Awal</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="tanggal_transaksi_awal" class="col col-form-label">Tgl. Transaksi Awal</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="tanggal_transaksi_awal" name="tanggal_transaksi_awal">
                     </div>
                 </div>
 
                 <div class="row my-3">
-                    <label for="tipe_kartu" class="col-sm-2 col-form-label">Tipe Kartu</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="tipe_kartu" class="col col-form-label">Tipe Kartu</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="tipe_kartu" name="tipe_kartu">
                     </div>
-                    <label for="id_merchant" class="col-sm-2 col-form-label">ID Merchant</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="id_merchant" class="col col-form-label">ID Merchant</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="id_merchant" name="id_merchant">
                     </div>
-                    <label for="nama_merchant" class="col-sm-2 col-form-label">Nama Merchant</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="nama_merchant" class="col col-form-label">Nama Merchant</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="nama_merchant" name="nama_merchant">
                     </div>
                 </div>
 
                 <div class="row my-3">
-                    <label for="tipe_mesin" class="col-sm-2 col-form-label">Tipe Mesin</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="tipe_mesin" class="col col-form-label">Tipe Mesin</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="tipe_mesin" name="tipe_mesin">
                     </div>
-                    <label for="tipe_transaksi" class="col-sm-2 col-form-label">Tipe Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="tipe_transaksi" class="col col-form-label">Tipe Transaksi</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="tipe_transaksi" name="tipe_transaksi">
                     </div>
-                    <label for="nama_transaksi" class="col-sm-2 col-form-label">Nama Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="nama_transaksi" class="col col-form-label">Nama Transaksi</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="nama_transaksi" name="nama_transaksi">
                     </div>
                 </div>
 
                 <div class="row my-3">
-                    <label for="nilai_transaksi" class="col-sm-2 col-form-label">Nilai Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="nilai_transaksi" class="col col-form-label">Nilai Transaksi</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="nilai_transaksi" name="nilai_transaksi">
                     </div>
-                    <label for="id_negara" class="col-sm-2 col-form-label">ID Negara</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="id_negara" class="col col-form-label">ID Negara</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="id_negara" name="id_negara">
                     </div>
-                    <label for="nama_negara" class="col-sm-2 col-form-label">Nama Negara</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="nama_negara" class="col col-form-label">Nama Negara</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="nama_negara" name="nama_negara">
                     </div>
                 </div>
 
                 <div class="row my-3">
-                    <label for="nama_kota" class="col-sm-2 col-form-label">Nama Kota</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="nama_kota" class="col col-form-label">Nama Kota</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="nama_kota" name="nama_kota">
                     </div>
-                    <label for="lokasi_mesin" class="col-sm-2 col-form-label">Lokasi Mesin</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="lokasi_mesin" class="col col-form-label">Lokasi Mesin</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="lokasi_mesin" name="lokasi_mesin">
                     </div>
-                    <label for="pemilik_mesin" class="col-sm-2 col-form-label">Pemilik Mesin</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="pemilik_mesin" class="col col-form-label">Pemilik Mesin</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="pemilik_mesin" name="pemilik_mesin">
                     </div>
                 </div>
 
                 <div class="row my-3">
-                    <label for="waktu_transaksi" class="col-sm-2 col-form-label">Waktu Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="waktu_transaksi" class="col col-form-label">Waktu Transaksi</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="waktu_transaksi" name="waktu_transaksi">
                     </div>
-                    <label for="kuartal_transaksi" class="col-sm-2 col-form-label">Kuartal Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="kuartal_transaksi" class="col col-form-label">Kuartal Transaksi</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="kuartal_transaksi" name="kuartal_transaksi">
                     </div>
-                    <label for="kepemilikan_kartu" class="col-sm-2 col-form-label">Kepemilikan Kartu</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="kepemilikan_kartu" class="col col-form-label">Kepemilikan Kartu</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="kepemilikan_kartu" name="kepemilikan_kartu">
                     </div>
                 </div>
 
                 <div class="row my-3">
-                    <label for="nama_channel" class="col-sm-2 col-form-label">Nama Channel</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="nama_channel" class="col col-form-label">Nama Channel</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="nama_channel" name="nama_channel">
                     </div>
-                    <label for="id_channel" class="col-sm-2 col-form-label">ID Channel</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <label for="id_channel" class="col col-form-label">ID Channel</label>
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="id_channel" name="id_channel">
                     </div>
-                    <label for="rata_rata_nilai_transaksi" class="col-sm-2 col-form-label">rata_rata Nilai
+                    <label for="rata_rata_nilai_transaksi" class="col col-form-label">Rerata Nilai
                         Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="rata_rata_nilai_transaksi" name="rata_rata_nilai_transaksi">
                     </div>
                 </div>
 
                 <div class="row my-3">
-                    <label for="maksimum_nilai_transaksi" class="col-sm-2 col-form-label">maksimum. Nilai
+                    <label for="maksimum_nilai_transaksi" class="col col-form-label">Max. Nilai
                         Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="maksimum_nilai_transaksi" name="maksimum_nilai_transaksi">
                     </div>
-                    <label for="minimum_nilai_transaksi" class="col-sm-2 col-form-label">minimum. Nilai
+                    <label for="minimum_nilai_transaksi" class="col col-form-label">Min. Nilai
                         Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="minimum_nilai_transaksi" name="minimum_nilai_transaksi">
                     </div>
-                    <label for="rata_rata_jumlah_transaksi" class="col-sm-2 col-form-label">rata_rata Jumlah
+                    <label for="rata_rata_jumlah_transaksi" class="col col-form-label">Rerata Jumlah
                         Transaksi</label>
-                    <div class="col-sm-2 input-group-sm">
+                    <div class="col-sm-12 col-md-2 input-group-sm">
                         <input type="number" class="form-control" id="rata_rata_jumlah_transaksi" name="rata_rata_jumlah_transaksi">
                     </div>
                 </div>
-                <div class="row mt-4 px-2">
+                <div class="row my-3 mt-4 px-2">
                     <button type="submit" class="btn btn-success btn-submit py-3">Cek Transaksi</button>
                 </div>
             </form>
@@ -172,7 +171,7 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/myScript.js') }}"></script>
 </body>
 
